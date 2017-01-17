@@ -1,0 +1,1911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="efa4e24e-0abf-4041-ab9e-0702445bcd5b" wsaVersion="NONE" name="HorseProfileJMSBinding" type="wsdl" bindingName="{http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1}HorseProfileJMSBinding" soapVersion="1_2" anonymous="optional" definition="file:/C:/Users/ajay/Desktop/mock/WSDL(backup)/CAP/IDARS/HorseProfile_v1_0.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="efa4e24e-0abf-4041-ab9e-0702445bcd5bfileName">HorseProfileJMSBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:/C:/Users/ajay/Desktop/mock/WSDL(backup)/CAP/IDARS/HorseProfile_v1_0.wsdl"><con:part><con:url>file:/C:/Users/ajay/Desktop/mock/WSDL(backup)/CAP/IDARS/HorseProfile_v1_0.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1" xmlns:ns1="http://www.hkjc.org.hk/Schema/CAP/Common_v2" xmlns:ns="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:tns="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:include schemaLocation="../../../Schema/CAP/IDARS/HorseProfile_v1_0.xsd"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.hkjc.org.hk/Schema/CAP/Common_v2" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:include schemaLocation="../../../Schema/CAP/Common_v2.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="CAP.IDARS.HorseProfile">
+    <wsdl:port name="HorseProfileJMS" binding="tns:HorseProfileJMSBinding">
+      <soap:address location=""/>
+      <jms:connectionFactory>FTQueueConnectionFactory</jms:connectionFactory>
+      <jms:targetAddress destination="queue">cap.idars.horseprofile.que.v1</jms:targetAddress>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="HorseProfile">
+    <wsdl:operation name="GetHorseList">
+      <wsdl:input message="tns:GetHorseListRequest"/>
+      <wsdl:output message="tns:GetHorseListResponse"/>
+      <wsdl:fault name="StatusError" message="tns:StatusError"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorseByHorseID">
+      <wsdl:input message="tns:GetHorseByHorseIDRequest"/>
+      <wsdl:output message="tns:GetHorseByHorseIDResponse"/>
+      <wsdl:fault name="StatusError" message="tns:StatusError"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfo">
+      <wsdl:input message="tns:GetServiceInfoRequest"/>
+      <wsdl:output message="tns:GetServiceInfoResponse"/>
+      <wsdl:fault name="StatusError" message="tns:StatusError"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorseByMeetingByRace">
+      <wsdl:input message="tns:GetHorseByMeetingByRaceRequest"/>
+      <wsdl:output message="tns:GetHorseByMeetingByRaceResponse"/>
+      <wsdl:fault name="StatusError" message="tns:StatusError"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HorseProfileJMSBinding" type="tns:HorseProfile">
+    <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+    <jms:binding messageFormat="Text"/>
+    <wsdl:operation name="GetHorseList">
+      <soap:operation style="document" soapAction="/service/CAP/IDARS/HorseProfile/GetHorseList"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="getHorseListRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="getHorseListResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="StatusError">
+        <soap:fault use="literal" name="StatusError"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorseByHorseID">
+      <soap:operation style="document" soapAction="/service/CAP/IDARS/HorseProfile/GetHorseByHorseID"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="getHorseByHorseIDRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="getHorseByHorseIDResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="StatusError">
+        <soap:fault use="literal" name="StatusError"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInfo">
+      <soap:operation style="document" soapAction="/service/CAP/IDARS/HorseProfile/GetServiceInfo"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="getServiceInfoRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="getServiceInfoResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="StatusError">
+        <soap:fault use="literal" name="StatusError"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorseByMeetingByRace">
+      <soap:operation style="document" soapAction="/service/CAP/IDARS/HorseProfile/GetHorseByMeetingByRace"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="getHorseByMeetingByRaceRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="getHorseByMeetingByRaceResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="StatusError">
+        <soap:fault use="literal" name="StatusError"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="GetHorseListRequest">
+    <wsdl:part name="getHorseListRequest" element="ns:GetHorseListRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetHorseListResponse">
+    <wsdl:part name="getHorseListResponse" element="ns:GetHorseListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="StatusError">
+    <wsdl:part name="errorMessage" element="ns1:ErrorMessage"/>
+  </wsdl:message>
+  <wsdl:message name="GetHorseByHorseIDRequest">
+    <wsdl:part name="getHorseByHorseIDRequest" element="ns:GetHorseByHorseIDRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetHorseByHorseIDResponse">
+    <wsdl:part name="getHorseByHorseIDResponse" element="ns:GetHorseByHorseIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetServiceInfoRequest">
+    <wsdl:part name="getServiceInfoRequest" element="ns1:GetServiceInfoRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetServiceInfoResponse">
+    <wsdl:part name="getServiceInfoResponse" element="ns1:GetServiceInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetHorseByMeetingByRaceRequest">
+    <wsdl:part name="getHorseByMeetingByRaceRequest" element="ns:GetHorseByMeetingByRaceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetHorseByMeetingByRaceResponse">
+    <wsdl:part name="getHorseByMeetingByRaceResponse" element="ns:GetHorseByMeetingByRaceResponse"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\ajay\Desktop\mock\Schema\CAP\IDARS\HorseProfile_v1_0.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2013 rel. 2 (http://www.altova.com) by Kit Lau (The hong Kong Jockey Club)-->
+<xs:schema targetNamespace="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:targetNamespace="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:co="http://www.hkjc.org.hk/Schema/CAP/Common_v2" xmlns:rco="http://www.hkjc.org.hk/Schema/CAP/IDARS/RaceCommon_v1" xmlns:ns1="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1">
+  <!--xs:include should come before any xs:import for consistency, and the version tag should be the first include-->
+  <xs:include schemaLocation="../VersionTag_v1_0.xsd"/>
+  <xs:import namespace="http://www.hkjc.org.hk/Schema/CAP/Common_v2" schemaLocation="../Common_v2.xsd"/>
+  <xs:import namespace="http://www.hkjc.org.hk/Schema/CAP/IDARS/RaceCommon_v1" schemaLocation="RaceCommon_v1.xsd"/>
+  <xs:complexType name="CTHorse">
+    <xs:annotation>
+      <xs:documentation>It contains a horse common detailed information.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Name" type="co:CTLangStr" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Name of the Horse in English (max. 20 characters), Traditional and Simplified Chinese (max. 18 characters).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" type="rco:STHorseStatus">
+        <xs:annotation>
+          <xs:documentation>Horse Status.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryOfOriginCode" type="rco:STCountryOfOriginCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The country of origin of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VisitingIndicator" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The visitiong indicator of the horse, either Y or N.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Colour" type="rco:STHorseColourCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Colour of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Sex" type="rco:STHorseSexCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Sex code of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ImportType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Import Type of the horse</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="OwnerPublishedName" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Published Owner 1 in English (max. 80 characters), Traditional and Simplified Chinese (max. 80 characters); may have 1 or 2 lines.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="co:CTLangStr">
+              <xs:attribute name="seqNo" type="xs:int" use="required">
+                <xs:annotation>
+                  <xs:documentation>sequence no, either 1 or 2.</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CurrentRating" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Current rating of the horse.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="ratingDate" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:documentation>current rating date</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InitialRatingOfSeason" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Intial rating in the beginning of the season.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Sire" type="co:CTLangStr" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Name of Sire in English (max. 20 characters) only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Dam" type="co:CTLangStr" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Name of Dam in English (max. 20 characters) only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SireOfDam" type="co:CTLangStr" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Name of Sire of Dam in English (max. 20 characters)  only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:group ref="GPEndOf_v1_0AnyElm"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="AGAnyAttr"/>
+  </xs:complexType>
+  <xs:complexType name="CTHorseDetail">
+    <xs:sequence>
+      <xs:element name="Age" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Age of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StatusDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The status update timestamp of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FoalingDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Foaling date of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FoalingYear" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Foal year of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ImportDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Import date of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ImportYear" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Import year of the horse.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExportedCountry" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Exported country</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TrainerCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Trainer code of the horse.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="rco:STTrainerCode">
+              <xs:attribute name="TrainerID" type="rco:STTrainerID"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TrainerDate" type="xs:dateTime" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Trainer Date</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FormerName" type="co:CTLangStr" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Horse Former in English (max. 20 characters) only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RacingColourDesc" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Racing Colour in English description (max. of 80 characters) of the horse, may have 1 or 2 lines.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="co:CTLangStr">
+              <xs:attribute name="seqNo" type="xs:integer" use="required">
+                <xs:annotation>
+                  <xs:documentation>sequence no, either 1 or 2.</xs:documentation>
+                </xs:annotation>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SireCountryOfOrigin" type="rco:STCountryOfOriginCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Sire's country of Origin.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DamCountryOfOrigin" type="rco:STCountryOfOriginCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Dam's country of Origin.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SireOfDamCountryOfOrigin" type="rco:STCountryOfOriginCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Sire of Dam's country of Origin.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GrandSire" type="co:CTLangStr" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Name of Grand Sire in English (max. 20 characters)  only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProfileImageURL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>ProfileImage URL, if available for the profile. eg. http:\\capfileRepository\medium\C140.gif</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LastUpdated" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>It is the record's latest updated timestamp.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:group ref="GPEndOf_v1_0AnyElm"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="co:AGAnyAttr"/>
+  </xs:complexType>
+  <xs:element name="GetHorseByMeetingByRaceRequest" type="CTGetHorseByMeetingByRaceRequest"/>
+  <xs:complexType name="CTGetHorseByMeetingByRaceRequest">
+    <xs:annotation>
+      <xs:documentation>Allow consumers to request a specific race of a local meeting's horses  information.  The request can be either by meeting ID or by meeting date and venue for meetings which are either current season or last 2 seasons.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ConsumerHeader" type="co:CTConsumerHeader"/>
+      <xs:group ref="rco:GPRaceID"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHorseByMeetingByRaceResponse" type="CTGetHorseByMeetingByRaceResponse"/>
+  <xs:complexType name="CTGetHorseByMeetingByRaceResponse">
+    <xs:annotation>
+      <xs:documentation>To retrieve a specific race of a local meeting's horses information.  The request can be either by meeting ID or by meeting date and venue for meetings which are either current season or last 2 seasons.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Return" type="co:CTReturn">
+        <xs:annotation>
+          <xs:documentation>Return status of the operation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RacingProfile" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only available if return code is success.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Horse" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Horse Summary info.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HorseInfo" type="CTHorse">
+                    <xs:annotation>
+                      <xs:documentation>The horse's summary information.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="HorseDetails" type="CTHorseDetail">
+                    <xs:annotation>
+                      <xs:documentation>The horse's detail information.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:group ref="GPEndOf_v1_0AnyElm"/>
+                </xs:sequence>
+                <xs:attribute name="horseID" type="rco:STHorseID" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The unique Identifier of a horse.</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="horseBrandNo" type="rco:STHorseBrandNo" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The horse brand number, for local race only, eg. A123</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attributeGroup ref="AGAnyAttr"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:group ref="GPEndOf_v1_0AnyElm"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:group ref="GPEndOf_v1_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHorseByHorseIDRequest" type="CTGetHorseByHorseIDRequest"/>
+  <xs:complexType name="CTGetHorseByHorseIDRequest">
+    <xs:annotation>
+      <xs:documentation>Allow channels to request a specific horser's info. by pass-in either horse id or horse brand number.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ConsumerHeader" type="co:CTConsumerHeader"/>
+      <xs:choice>
+        <xs:element name="HorseID" type="rco:STHorseID">
+          <xs:annotation>
+            <xs:documentation>The horse unique identifier.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="HorseBrandNo" type="rco:STHorseBrandNo">
+          <xs:annotation>
+            <xs:documentation>The horse brand number, eg. A123</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHorseByHorseIDResponse" type="CTGetHorseByHorseIDResponse"/>
+  <xs:complexType name="CTGetHorseByHorseIDResponse">
+    <xs:annotation>
+      <xs:documentation>To retrieve a specific horse’s information by either specifying a horse id or a horse brand number.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Return" type="co:CTReturn">
+        <xs:annotation>
+          <xs:documentation>Return status of the operation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RacingProfile" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only available if return code is success.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Horse" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Horse Summary info.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HorseInfo" type="CTHorse">
+                    <xs:annotation>
+                      <xs:documentation>The horse's summary information.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="HorseDetails" type="CTHorseDetail">
+                    <xs:annotation>
+                      <xs:documentation>The horse's detail information.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:group ref="GPEndOf_v1_0AnyElm"/>
+                </xs:sequence>
+                <xs:attribute name="horseID" type="rco:STHorseID" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The Unique Identifier of a horse.</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="horseBrandNo" type="rco:STHorseBrandNo" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The horse brand number, for local race only, eg. A123</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attributeGroup ref="co:AGAnyAttr"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:group ref="GPEndOf_v1_0AnyElm"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:group ref="GPEndOf_v1_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSameSireByHorseIDRequest" type="CTGetSameSireByHorseIDRequest"/>
+  <xs:complexType name="CTGetSameSireByHorseIDRequest">
+    <xs:annotation>
+      <xs:documentation>Allow channels to request a specific horser's same sire info. by pass-in either horse id or horse brand number.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ConsumerHeader" type="co:CTConsumerHeader"/>
+      <xs:choice>
+        <xs:element name="HorseID" type="rco:STHorseID">
+          <xs:annotation>
+            <xs:documentation>The horse unique identifier.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="HorseBrandNo" type="rco:STHorseBrandNo">
+          <xs:annotation>
+            <xs:documentation>The horse brand number, eg. A123</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSameSireByHorseIDResponse" type="CTGetSameSireByHorseIDResponse"/>
+  <xs:complexType name="CTGetSameSireByHorseIDResponse">
+    <xs:annotation>
+      <xs:documentation>To retrieve a specific horse’s same sire information by either specifying a horse id or a horse brand number.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Return" type="co:CTReturn">
+        <xs:annotation>
+          <xs:documentation>Return status of the operation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RacingProfile" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only available if return code is success.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Horse" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Same Sire Horse Summary info.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HorseInfo">
+                    <xs:annotation>
+                      <xs:documentation>Same Sire Horse Summary Info.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Name" type="co:CTLangStr" maxOccurs="unbounded">
+                          <xs:annotation>
+                            <xs:documentation>Name of the Horse in English (max. 20 characters), Traditional and Simplified Chinese (max. 18 characters).</xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Status" type="rco:STHorseStatus">
+                          <xs:annotation>
+                            <xs:documentation>Horse Status.</xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ImportType" minOccurs="0">
+                          <xs:annotation>
+                            <xs:documentation>Import Type of the horse</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attributeGroup ref="co:AGAnyAttr"/>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:group ref="GPEndOf_v1_0AnyElm"/>
+                </xs:sequence>
+                <xs:attribute name="horseID" type="rco:STHorseID" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The Unique Identifier of a horse.</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="horseBrandNo" type="rco:STHorseBrandNo" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The horse brand number, for local race only, eg. A123</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attributeGroup ref="co:AGAnyAttr"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:group ref="GPEndOf_v1_0AnyElm"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:group ref="GPEndOf_v1_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHorseListRequest" type="CTGetHorseListRequest"/>
+  <xs:complexType name="CTGetHorseListRequest">
+    <xs:annotation>
+      <xs:documentation>Allow channels to request full horse list, ie. data from RIS horse profile.  If pass-in ActiveStatus is ture (default), only active horse list will be returned.    For updates, subscript the RSInfoChange topic to get event-notification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ConsumerHeader" type="co:CTConsumerHeader"/>
+      <xs:element name="ActiveStatus" type="xs:boolean" default="1">
+        <xs:annotation>
+          <xs:documentation>Only 'Race' horses will be returned if this value is ture, default, otherwise, full horse list will be returned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHorseListResponse" type="CTGetHorseListResponse"/>
+  <xs:complexType name="CTGetHorseListResponse">
+    <xs:annotation>
+      <xs:documentation>To retrieve full local race meetings' horse list that is available at RIS horse profile.    For updates, subscript the RSInfoChange topic to get event-notification.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Return" type="co:CTReturn">
+        <xs:annotation>
+          <xs:documentation>Return status of the operation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RacingProfile" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only available if return code is success.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Horse" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Horse info.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="co:CTLangStr" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>Name of the Horse.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Status" type="rco:STHorseStatus">
+                    <xs:annotation>
+                      <xs:documentation>Horse Status.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:group ref="GPEndOf_v1_0AnyElm"/>
+                </xs:sequence>
+                <xs:attribute name="horseID" type="rco:STHorseID" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The Unique Identifier of a horse.</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="horseBrandNo" type="rco:STHorseBrandNo" use="required">
+                  <xs:annotation>
+                    <xs:documentation>The horse brand number, for local race only, eg. A123</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attributeGroup ref="co:AGAnyAttr"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:group ref="GPEndOf_v1_0AnyElm"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:group ref="GPEndOf_v1_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\ajay\Desktop\mock\Schema\CAP\Common_v2.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2015 (http://www.altova.com) by The hong Kong Jockey Club (The hong Kong Jockey Club)-->
+<xs:schema targetNamespace="http://www.hkjc.org.hk/Schema/CAP/Common_v2" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hkjc.org.hk/Schema/CAP/Common_v2">
+  <!--xs:include should come before any xs:import for consistency, and the version tag should be the first include-->
+  <xs:include schemaLocation="VersionTag_v2_0.xsd"/>
+  <xs:element name="Acknowledgement" type="STAcknowledgement"/>
+  <xs:element name="CAPErrorCode" type="STCAPErrorCode"/>
+  <xs:element name="GUID" type="STGUID">
+    <xs:annotation>
+      <xs:documentation>The GUID represents the Global Unique Identifier.  The pattern of the GUID must be xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CreatedOn" type="xs:dateTime" nillable="true"/>
+  <xs:element name="CreatedBy" type="xs:string"/>
+  <xs:element name="UpdatedOn" type="xs:dateTime" nillable="true"/>
+  <xs:element name="UpdatedBy" type="xs:string"/>
+  <xs:element name="ErrorMessage" type="xs:string"/>
+  <xs:attribute name="lang" type="STLangCode"/>
+  <xs:element name="GetServiceInfoRequest" type="CTGetServiceInfoRequest"/>
+  <xs:complexType name="CTGetServiceInfoResponse">
+    <xs:annotation>
+      <xs:documentation>Service Info  response type.  If ServiceInfo/ServiceStatus="Active", ithe service is healthy.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Return" type="CTReturn">
+        <xs:annotation>
+          <xs:documentation>Return status of the operation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceInfo" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only available if return code is success.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ServiceStatus" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Service Status, can be Active, Inactive, etc.  If it is "Active", the service is healthy.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ReleaseDate" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Release date of the service, in the form yyyy-mm-dd, e.g. 2014-05-20</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ReleaseMajorVersion" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Major version of the service, with prefix "v", e.g. v1, v2 etc.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ReleaseMinorVersion" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Minor version of the service, with prefix "v", e.g. v1, v2 etc.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ServiceName" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Full-qualified Service Name, e.g. CAP.IDARS.Fixture</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Reserved" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Reserved</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AvailableServiceCalls" type="xs:integer" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>Number of operations available of this service.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ServiceThreads" type="xs:integer" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>Number of service threads of this service.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="FileDescriptors" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>File Descriptor</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="MemoryUsage" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>Memory used by this service</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="NICs" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>Network Interface Cards</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Value" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>Reserved Key-Value pair.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="key" type="xs:string" use="required"/>
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:group ref="GPEndOf_v2_0AnyElm"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="AGAnyAttr"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:group ref="GPEndOf_v2_0AnyElm"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:group ref="GPEndOf_v2_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetServiceInfoResponse" type="CTGetServiceInfoResponse"/>
+  <xs:complexType name="CTGetServiceInfoRequest">
+    <xs:annotation>
+      <xs:documentation>Service Info request type</xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:simpleType name="STString255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STString2000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2000"/>
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STGUID">
+    <xs:annotation>
+      <xs:documentation>The representation of a GUID, generally the id of an element.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="36"/>
+      <!--<xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>-->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STUniqueID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of an entity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="36"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STCAPErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="36"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STAcknowledgement">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="36"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STIPAddress">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="39"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STLangCode">
+    <xs:restriction base="xs:language">
+      <xs:enumeration value="en-us"/>
+      <xs:enumeration value="zh-hk"/>
+      <xs:enumeration value="zh-cn"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STErrorCatagory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="System"/>
+      <xs:enumeration value="Application"/>
+      <xs:enumeration value="InvalidParam"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CTReturn">
+    <xs:annotation>
+      <xs:documentation>The return status of the service call.  If success, the Code will be zero.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Code" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The value will be zero if success.  For list of return code, please refer to individual application return code list.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Category" type="STErrorCatagory" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only applicable if return code is non-zero. System, Application or Invalid Pass-in Parameter</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Only applicable if return code is non-zero. The description of error.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:group ref="GPEndOf_v2_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CTLangStr">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="lang" type="STLangCode" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CTCodeLangStr">
+    <xs:annotation>
+      <xs:documentation>For any code and multiple language descriptions.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Code">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Value" type="CTLangStr" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CTConsumerHeader">
+    <xs:sequence>
+      <xs:element name="SessionID" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Unique identifier across the consumer’s application for each individual operation calls. For those without it, CAP will generate one using the hostname plus timestamp plus sequence number.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="36"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ServerID">
+        <xs:annotation>
+          <xs:documentation>Host name of the consumer</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="36"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ClientIP" type="STIPAddress" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>End client’s IP address</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EntryPointCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Consumer’s Club System Code plus '.' plus application name as in the SVREPO (SOA Service Repository)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceVersion" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Service version as in SVREPO registration: with major and minor version info. eg. 1.1</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:group ref="GPEndOf_v2_0AnyElm"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="STUserId">
+    <xs:annotation>
+      <xs:documentation>The unique identifier of a user</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STDayCode">
+    <xs:annotation>
+      <xs:documentation>3 character day code, eg. MON, TUE, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MON"/>
+      <xs:enumeration value="TUE"/>
+      <xs:enumeration value="WED"/>
+      <xs:enumeration value="THU"/>
+      <xs:enumeration value="FRI"/>
+      <xs:enumeration value="SAT"/>
+      <xs:enumeration value="SUN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\ajay\Desktop\mock\Schema\CAP\VersionTag_v2_0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>No namespace should be defined. Same namespace must be referenced as the target file at which this schema to be included</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>xs:include should come before any xs:import for consistency, and the version tag should be the first include</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="VersionTagCommon_v1.xsd"/>
+  <!--v2.0-->
+  <xs:group name="GPEndOf_v2_0">
+    <xs:annotation>
+      <xs:documentation>Version tag, it should be followed by xs:any to support backward compatibility if this version is the latest one, so a group must also be defined, i.e. GPEndOf_va_bAnyElm, e.g. GPEndOf_v1_0AnyElm</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EndOf_v2_0Elm" type="xs:string"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="GPEndOf_v2_0AnyElm">
+    <xs:annotation>
+      <xs:documentation>Reserved, placeholder only, don't refer to it, will be removed when major version upgrade.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="GPEndOf_v2_0"/>
+      <xs:group ref="GPAnyElm"/>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\ajay\Desktop\mock\Schema\CAP\VersionTagCommon_v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>This is for any element and any attribute, to use this file, please include corresponding version tag schema, i.e. the placeholder for backward compatibility, e.g. VersionTag_v1_0.xsd. Don't create your own copy. No namespace should be defined here. Same namespace must be referenced as the target file at which this schema to be included</xs:documentation>
+  </xs:annotation>
+  <xs:attributeGroup name="AGAnyAttr">
+    <xs:annotation>
+      <xs:documentation>Reserved for minor version upgrade.</xs:documentation>
+    </xs:annotation>
+    <xs:anyAttribute processContents="lax"/>
+  </xs:attributeGroup>
+  <xs:group name="GPAnyElm">
+    <xs:sequence>
+      <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\ajay\Desktop\mock\Schema\CAP\IDARS\RaceCommon_v1.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2013 rel. 2 (http://www.altova.com) by Kit Lau (The hong Kong Jockey Club)-->
+<xs:schema targetNamespace="http://www.hkjc.org.hk/Schema/CAP/IDARS/RaceCommon_v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hkjc.org.hk/Schema/CAP/IDARS/RaceCommon_v1" xmlns:co="http://www.hkjc.org.hk/Schema/CAP/Common_v2">
+  <!--xs:include should come before any xs:import for consistency, and the version tag should be the first include-->
+  <xs:include schemaLocation="../VersionTag_v1_0.xsd"/>
+  <xs:import namespace="http://www.hkjc.org.hk/Schema/CAP/Common_v2" schemaLocation="../Common_v2.xsd"/>
+  <xs:simpleType name="STAnyEnumString">
+    <xs:restriction base="xs:string">
+      <xs:pattern value=".*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STMeetingID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of a race meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="co:STUniqueID"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of a race of a meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="co:STUniqueID"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRunnerID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of a runner of a race of a race meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="co:STUniqueID"/>
+  </xs:simpleType>
+  <xs:simpleType name="STHorseID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of a horse.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="co:STUniqueID"/>
+  </xs:simpleType>
+  <xs:simpleType name="STJockeyID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of a jockey.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="co:STUniqueID"/>
+  </xs:simpleType>
+  <xs:simpleType name="STTrainerID">
+    <xs:annotation>
+      <xs:documentation>The Unique Identifier of a trainer.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="co:STUniqueID"/>
+  </xs:simpleType>
+  <xs:simpleType name="STBetTypeBase">
+    <xs:annotation>
+      <xs:documentation>Bet Type, eg. WIN/PLA/QPL/QIN/TCE/TRI/DBL/D-Q/D-T/TBL/T-T/F-F/QTT/6UP/JKC/CWA/CWB/CWC, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WIN"/>
+      <xs:enumeration value="PLA"/>
+      <xs:enumeration value="QIN"/>
+      <xs:enumeration value="QPL"/>
+      <xs:enumeration value="TCE"/>
+      <xs:enumeration value="TRI"/>
+      <xs:enumeration value="F-F"/>
+      <xs:enumeration value="QTT"/>
+      <xs:enumeration value="CWA"/>
+      <xs:enumeration value="CWB"/>
+      <xs:enumeration value="CWC"/>
+      <xs:enumeration value="DBL"/>
+      <xs:enumeration value="D-T"/>
+      <xs:enumeration value="D-Q"/>
+      <xs:enumeration value="TBL"/>
+      <xs:enumeration value="T-T"/>
+      <xs:enumeration value="6UP"/>
+      <xs:enumeration value="JKC"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STBetType">
+    <xs:annotation>
+      <xs:documentation>Bet Type, such as WIN/PLA/QPL/QIN/TCE/TRI/DBL/D-Q/D-T/TBL/T-T/F-F/QTT/6UP/JKC/CWA/CWB/CWC, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STBetTypeBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STCountryOfOriginCode">
+    <xs:annotation>
+      <xs:documentation>The Country of Origin Code, max. 3 characters.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STScratchCode">
+    <xs:annotation>
+      <xs:documentation>Scratch Code for local meeting; with max length of 1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STCupIndex">
+    <xs:annotation>
+      <xs:documentation>Racing Cup Index; with max length of 2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STMeetingStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Meeting status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Started">
+        <xs:annotation>
+          <xs:documentation>The information of the meeting is under adjustment by BOCC.  The information will NOT be published at this stage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Draft">
+        <xs:annotation>
+          <xs:documentation>BOCC Draft Overseas Meeting; for simulcast meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Initial">
+        <xs:annotation>
+          <xs:documentation>The racing fixture is published, for local meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Entry">
+        <xs:annotation>
+          <xs:documentation>The confirmed entry information of the race meeting is published; for local meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Declared">
+        <xs:annotation>
+          <xs:documentation>For local race meeting, the confirmed starter declaration of the race meeting is published.
+For simulcast race meeting, the race card information is completely published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Defined">
+        <xs:annotation>
+          <xs:documentation>The confirmed pari-mutuel pool information of the race meeting is published from wagering control system.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Closed">
+        <xs:annotation>
+          <xs:documentation>The last race “weighed in” is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EntryAbandon">
+        <xs:annotation>
+          <xs:documentation>The meeting abandoned before the declared starter list is published; for local meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Abandon">
+        <xs:annotation>
+          <xs:documentation>The meeting abandoned after the declaration and before the first race “Weighed In” is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AbandonPartial">
+        <xs:annotation>
+          <xs:documentation>The meeting abandoned after the first race “Weighed In” is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STMeetingStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Meeting status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STMeetingStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Race status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Draft">
+        <xs:annotation>
+          <xs:documentation>The information of the race is under adjustment by BOCC.  The information will NOT be published at this stage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Declared">
+        <xs:annotation>
+          <xs:documentation>For local race meeting, the confirmed starter declaration of the race meeting is published.
+For simulcast race meeting, the race card information is completely published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Named">
+        <xs:annotation>
+          <xs:documentation>The race is named.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Closed">
+        <xs:annotation>
+          <xs:documentation>The race is closed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Result">
+        <xs:annotation>
+          <xs:documentation>The race result, either official or unofficial, is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Voided">
+        <xs:annotation>
+          <xs:documentation>The race is voided or the meeting abandoned before the race “Weighed In” is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Race status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STRaceStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceResultStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Race Result status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:documentation>No result available; happened after revoke result.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Partial">
+        <xs:annotation>
+          <xs:documentation>The partial result is published by BOCC.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Completed">
+        <xs:annotation>
+          <xs:documentation>The whole result for wagering is published by BOCC.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Official">
+        <xs:annotation>
+          <xs:documentation>The race “Weighed In” is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FullFieldPlacing">
+        <xs:annotation>
+          <xs:documentation>The placing and margin information of all the runners of the race is published, for local meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WCFullMargin">
+        <xs:annotation>
+          <xs:documentation>The race margin is published by BOCC, for simulcast meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Voided">
+        <xs:annotation>
+          <xs:documentation>The race is voided or the meeting abandoned before the race “Weighed In” is published.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceResultStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Race Result status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STRaceResultStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STEntriesStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Entry status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Entry">
+        <xs:annotation>
+          <xs:documentation>It is the normal runner at Entry stage, for local entry runner only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bout">
+        <xs:annotation>
+          <xs:documentation>It is the standby runner at Entry stage, for local entry runner only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STEntriesStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Entries status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STEntriesStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRunnerStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal /Runner status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Draft">
+        <xs:annotation>
+          <xs:documentation>It is the draft simulcast runner; for simulcast race meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DraftStandby">
+        <xs:annotation>
+          <xs:documentation>It is the draft simulcast reserve runner; for simulcast race meeting only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Declared">
+        <xs:annotation>
+          <xs:documentation>It is the normal runner on/after Declaration stage and before race taken placed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ran">
+        <xs:annotation>
+          <xs:documentation>It is the normal runner after race taken placed; triggered by race resultin.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Standby">
+        <xs:annotation>
+          <xs:documentation>It is the standby/reserve runner on/after Declaration stage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Scratched">
+        <xs:annotation>
+          <xs:documentation>It is the scratched normal runner on/after Declaration stage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ScratchedReserved">
+        <xs:annotation>
+          <xs:documentation>It is the scratched standby/reserve runner on/after Declaration stage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STRunnerStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Runner status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STRunnerStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STJKCJockeyStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal JKC Jockey status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Initial">
+        <xs:annotation>
+          <xs:documentation>Initial JKC jockey.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Defined">
+        <xs:annotation>
+          <xs:documentation>Define JKC jockey.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lose">
+        <xs:annotation>
+          <xs:documentation>Flag individual JKC jockey as lose.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Withdrawn">
+        <xs:annotation>
+          <xs:documentation>Flag individual JKC jockey as withdraw.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STJKCJockeyStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal JKC Jockey status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STJKCJockeyStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STHorseStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Horse status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Race">
+        <xs:annotation>
+          <xs:documentation>The horse is active for racing.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dead">
+        <xs:annotation>
+          <xs:documentation>The horse is dead.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Export">
+        <xs:annotation>
+          <xs:documentation>The horse is exported.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Retired">
+        <xs:annotation>
+          <xs:documentation>The horse is retired.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STHorseStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Horse status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STHorseStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STJockeyStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Jockey status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:documentation>The entity is active.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inactive">
+        <xs:annotation>
+          <xs:documentation>The entity is in-active.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STJockeyStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Jockey status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STJockeyStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STTrainerStatusBase">
+    <xs:annotation>
+      <xs:documentation>CAP internal Trainer status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:documentation>The entity is active.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inactive">
+        <xs:annotation>
+          <xs:documentation>The entity is in-active.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STTrainerStatus">
+    <xs:annotation>
+      <xs:documentation>CAP internal Trainer status</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STTrainerStatusBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STNumOfRace">
+    <xs:annotation>
+      <xs:documentation>Number of Races of a race meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STVenueCodeLocalBase">
+    <xs:annotation>
+      <xs:documentation>Venue Code for Local Race Meeting</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ST">
+        <xs:annotation>
+          <xs:documentation>Shatin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HV">
+        <xs:annotation>
+          <xs:documentation>Happy Valley</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STVenueCodeLocal">
+    <xs:annotation>
+      <xs:documentation>Venue Code for Local Race Meeting</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STVenueCodeLocalBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STVenueCodeSimulcastBase">
+    <xs:annotation>
+      <xs:documentation>Venue Code for Simulcast Race Meeting</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S1">
+        <xs:annotation>
+          <xs:documentation>Simulcast 1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S2">
+        <xs:annotation>
+          <xs:documentation>Simulcast 2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S3">
+        <xs:annotation>
+          <xs:documentation>Simulcast 3</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S4">
+        <xs:annotation>
+          <xs:documentation>Simulcast 4</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S5">
+        <xs:annotation>
+          <xs:documentation>Simulcast 5</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S6">
+        <xs:annotation>
+          <xs:documentation>Simulcast 6</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S7">
+        <xs:annotation>
+          <xs:documentation>Simulcast 7</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S8">
+        <xs:annotation>
+          <xs:documentation>Simulcast 8</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S9">
+        <xs:annotation>
+          <xs:documentation>Simulcast 9</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STVenueCodeSimulcast">
+    <xs:annotation>
+      <xs:documentation>Venue Code for Simulcastl Race Meeting</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STVenueCodeSimulcastBase STAnyEnumString"/>
+  </xs:simpleType>
+  <xs:simpleType name="STVenueCode">
+    <xs:annotation>
+      <xs:documentation>Venue Code for both Local and Simulcast Race Meeting</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="STVenueCodeLocal STVenueCodeSimulcast"/>
+  </xs:simpleType>
+  <xs:simpleType name="STSeasonCode">
+    <xs:annotation>
+      <xs:documentation>eg. 12/13 for season 2012/2013; with max length of 5</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STTrackCode">
+    <xs:annotation>
+      <xs:documentation>eg. AWT, TURF, etc.; with max length of 5</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STMeetingTrack">
+    <xs:annotation>
+      <xs:documentation>Meeting Track; with max length of 5. eg. MIXED, AWT, TURF, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STMeetingType">
+    <xs:annotation>
+      <xs:documentation>Meeting Type ; with max length of 1. eg. D (day), N (Night), etc.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STCourseCode">
+    <xs:annotation>
+      <xs:documentation>eg. A, B, C, etc.; with max length of 1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STClassCode">
+    <xs:annotation>
+      <xs:documentation>Class code; with max length of 7</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STGoingCode">
+    <xs:annotation>
+      <xs:documentation>A race meeting's condition; with max length of 2. eg. G, F, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STDistance">
+    <xs:annotation>
+      <xs:documentation>Race distance in metre; with max value of 9999.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceNo">
+    <xs:annotation>
+      <xs:documentation>Race Number</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceType">
+    <xs:annotation>
+      <xs:documentation>Race Type; with max length of 1, eg. H (Handicap), T (Term), etc.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceRatingType">
+    <xs:annotation>
+      <xs:documentation>Race Rating Type; with max length of 1, eg. H (HK Normal Rating); I  (International Rating); M (HK Macau Rating)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>HK Normal Rating</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>International Rating</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>HK Macau Rating</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceIndex">
+    <xs:annotation>
+      <xs:documentation>Race index within the racing season</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STHorseColourCode">
+    <xs:annotation>
+      <xs:documentation>Horse Colour Code; with max length of 6</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STHorseSexCode">
+    <xs:annotation>
+      <xs:documentation>Horse Sex Code; with max length of 1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STPlacing">
+    <xs:annotation>
+      <xs:documentation>The finishing poisition; with max value of 99</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STResultIndex">
+    <xs:annotation>
+      <xs:documentation>The race result index; with max length of 4.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRaceRating">
+    <xs:annotation>
+      <xs:documentation>The Race's rating; with max length of 7.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STDrawNo">
+    <xs:annotation>
+      <xs:documentation>The barrier draw number; with max value of 99</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRunnerNo">
+    <xs:annotation>
+      <xs:documentation>Runner Number, not available for standby horse(s)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="99"/>
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STStandbyNo">
+    <xs:annotation>
+      <xs:documentation>Standby Runner Number, only available for standby horse(s)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="99"/>
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STSaddleClothNo">
+    <xs:annotation>
+      <xs:documentation>Saddle Cloth Number, only available for simulcast race meeting with bracketing.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="99"/>
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="STHorseBrandNo">
+    <xs:annotation>
+      <xs:documentation>The horse brand number, for local race only; with max length of 5, eg. A123</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STJockeyCode">
+    <xs:annotation>
+      <xs:documentation>Jockey Code; with max length of 3.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STTrainerCode">
+    <xs:annotation>
+      <xs:documentation>Trainer Code; with max length of 3.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRanking">
+    <xs:annotation>
+      <xs:documentation>The ranking value; with max value of 99999</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STRunningPosition">
+    <xs:annotation>
+      <xs:documentation>The position of the horse for a particular section; with max value of 99.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STLengthBehindWinner">
+    <xs:annotation>
+      <xs:documentation>The length behind the winner; with max length of 6.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STGearInfo">
+    <xs:annotation>
+      <xs:documentation>It contains all Gear codes, with "/" as delimination, and +/- is also included to indicate the runner is with or without that gear for this ran; with max length of 100.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STFinishTime">
+    <xs:annotation>
+      <xs:documentation>Finishing Time in m.ss:ms  (i.e. minutes, seconds and hunderds of seconds with period as separator); with max length of 7</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STSectionNo">
+    <xs:annotation>
+      <xs:documentation>The number of the section; with max value of 10.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="STSectionalTime">
+    <xs:annotation>
+      <xs:documentation>Sectional Time in ss.ms  (i.e. seconds and hunderds of seconds with period as separator); with max length of 5</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="STStakeWon">
+    <xs:annotation>
+      <xs:documentation>The stake money won in dollars.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal"/>
+  </xs:simpleType>
+  <xs:simpleType name="STFieldSize">
+    <xs:annotation>
+      <xs:documentation>The capacity of the field size of a race track; with range from 1 to 99.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:complexType name="CTNumOfStarts">
+    <xs:annotation>
+      <xs:documentation>The number of starts, number of first, second, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NumOfStarts">
+        <xs:annotation>
+          <xs:documentation>Total number of starts withint the specific period.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NumOfFirst">
+        <xs:annotation>
+          <xs:documentation>Number of starts in First position withint the specific period.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NumOfSecond">
+        <xs:annotation>
+          <xs:documentation>Number of starts in Second position withint the specific period.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NumOfThird">
+        <xs:annotation>
+          <xs:documentation>Number of starts in Third position withint the specific period.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NumOfFourth" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Number of starts in Fourth position withint the specific period.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NumOfFifth" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Number of starts in Fifth position withint the specific period.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:group name="GPMeetingBizID">
+    <xs:annotation>
+      <xs:documentation>To specify meeting by business key</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Meeting">
+        <xs:annotation>
+          <xs:documentation>The meeting's information.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Date" type="xs:date">
+              <xs:annotation>
+                <xs:documentation>The meeting date.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="VenueCode" type="STVenueCode">
+              <xs:annotation>
+                <xs:documentation>The venue code of the meeting.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="GPMeetingID">
+    <xs:annotation>
+      <xs:documentation>To specify meeting identifier, either unique id or business key</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="MeetingID" type="STMeetingID">
+        <xs:annotation>
+          <xs:documentation>The meeting's unique identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:group ref="GPMeetingBizID"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="GPRaceID">
+    <xs:annotation>
+      <xs:documentation>To specify race identifier, either unique id or business key</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="RaceID" type="STRaceID">
+        <xs:annotation>
+          <xs:documentation>The race's unique identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:sequence>
+        <xs:group ref="GPMeetingBizID"/>
+        <xs:element name="RaceNo" type="STRaceNo">
+          <xs:annotation>
+            <xs:documentation>The race number.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:choice>
+  </xs:group>
+  <xs:attributeGroup name="AGRunner">
+    <xs:annotation>
+      <xs:documentation>To specify runner identifier in attribute, either unique id or business key</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="raceID" type="STRaceID" use="required">
+      <xs:annotation>
+        <xs:documentation>The race's unique identifier.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="runnerID" type="STRunnerID" use="required">
+      <xs:annotation>
+        <xs:documentation>The runner's unique identifier.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="statusLastUpdated" type="xs:dateTime" use="required">
+      <xs:annotation>
+        <xs:documentation>It is the runner status latest updated timestamp.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="runnerNo" type="STRunnerNo">
+      <xs:annotation>
+        <xs:documentation>Runner number of the runner for the concerned race meeting, not available if it standby or was withdrawn by promotion, or at entry stage.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="standbySeqNo" type="STStandbyNo">
+      <xs:annotation>
+        <xs:documentation>It is only applicable to Local Race meeting with standby status is true.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="AGAnyAttr"/>
+  </xs:attributeGroup>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\ajay\Desktop\mock\Schema\CAP\VersionTag_v1_0.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2013 rel. 2 (http://www.altova.com) by HKJC (The hong Kong Jockey Club)-->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>No namespace should be defined. Same namespace must be referenced as the target file at which this schema to be included</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>xs:include should come before any xs:import for consistency, and the version tag should be the first include</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="VersionTagCommon_v1.xsd"/>
+  <!--v1.0-->
+  <xs:group name="GPEndOf_v1_0">
+    <xs:annotation>
+      <xs:documentation>Version tag, it should be followed by xs:any to support backward compatibility if this version is the latest one, so a group must also be defined, i.e. GPEndOf_va_bAnyElm, e.g. GPEndOf_v1_0AnyElm</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EndOf_v1_0Elm" type="xs:string"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="GPEndOf_v1_0AnyElm">
+    <xs:annotation>
+      <xs:documentation>Reserved, placeholder only, don't refer to it, will be removed when major version upgrade.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="GPEndOf_v1_0"/>
+      <xs:group ref="GPAnyElm"/>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ajay-PC:8054/mockHorseProfileJMSBinding</con:endpoint></con:endpoints></con:interface>

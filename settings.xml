@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="cb932cd8-09a3-4e30-9364-57c47b2c57b5" activeEnvironment="Default environment" name="Project 1" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" lastOpened="2017-01-17T09:36:50.277+05:30" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/><con:authRepository/><con:tags/></con:soapui-project>

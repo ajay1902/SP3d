@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="GetHorseByHorseID" id="ab943159-37e0-4b55-b338-911139ed4e41" interface="HorseProfileJMSBinding" operation="GetHorseByHorseID" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ab943159-37e0-4b55-b338-911139ed4e41fileName">GetHorseByHorseID</con:setting></con:settings><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>QUERY_MATCH</con:dispatchStyle><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="ea4896ad-1173-476f-80d6-48ff554feaa3" httpResponseStatus="200" encoding="UTF-8" dataSource=""><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:hor="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">
+   <soap:Header/>
+   <soap:Body>
+      <hor:GetHorseByHorseIDResponse>
+         <hor:Return>
+            <com:Code>?</com:Code>
+            <!--Optional:-->
+            <com:Category>?</com:Category>
+            <!--Optional:-->
+            <com:Description>?</com:Description>
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </hor:Return>
+         <!--Optional:-->
+         <hor:RacingProfile>
+            <!--1 or more repetitions:-->
+            <hor:Horse horseID="1" horseBrandNo="?">
+               <hor:HorseInfo>
+                  <!--1 or more repetitions:-->
+                  <hor:Name lang="?">?</hor:Name>
+                  <hor:Status>?</hor:Status>
+                  <!--Optional:-->
+                  <hor:CountryOfOriginCode>?</hor:CountryOfOriginCode>
+                  <!--Optional:-->
+                  <hor:VisitingIndicator>?</hor:VisitingIndicator>
+                  <!--Optional:-->
+                  <hor:Colour>?</hor:Colour>
+                  <!--Optional:-->
+                  <hor:Sex>?</hor:Sex>
+                  <!--Optional:-->
+                  <hor:ImportType>?</hor:ImportType>
+                  <!--Zero or more repetitions:-->
+                  <hor:OwnerPublishedName lang="?" seqNo="?">?</hor:OwnerPublishedName>
+                  <!--Optional:-->
+                  <hor:CurrentRating ratingDate="?">?</hor:CurrentRating>
+                  <!--Optional:-->
+                  <hor:InitialRatingOfSeason>?</hor:InitialRatingOfSeason>
+                  <!--Optional:-->
+                  <hor:Sire lang="?">?</hor:Sire>
+                  <!--Optional:-->
+                  <hor:Dam lang="?">?</hor:Dam>
+                  <!--Optional:-->
+                  <hor:SireOfDam lang="?">?</hor:SireOfDam>
+                  <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+                  <!--You may enter ANY elements at this point-->
+               </hor:HorseInfo>
+               <hor:HorseDetails>
+                  <!--Optional:-->
+                  <hor:Age>?</hor:Age>
+                  <!--Optional:-->
+                  <hor:StatusDate>?</hor:StatusDate>
+                  <!--Optional:-->
+                  <hor:FoalingDate>?</hor:FoalingDate>
+                  <!--Optional:-->
+                  <hor:FoalingYear>?</hor:FoalingYear>
+                  <!--Optional:-->
+                  <hor:ImportDate>?</hor:ImportDate>
+                  <!--Optional:-->
+                  <hor:ImportYear>?</hor:ImportYear>
+                  <!--Optional:-->
+                  <hor:ExportedCountry>?</hor:ExportedCountry>
+                  <!--Optional:-->
+                  <hor:TrainerCode TrainerID="?">?</hor:TrainerCode>
+                  <!--Optional:-->
+                  <hor:TrainerDate>?</hor:TrainerDate>
+                  <!--Zero or more repetitions:-->
+                  <hor:FormerName lang="?">?</hor:FormerName>
+                  <!--Zero or more repetitions:-->
+                  <hor:RacingColourDesc lang="?" seqNo="?">?</hor:RacingColourDesc>
+                  <!--Optional:-->
+                  <hor:SireCountryOfOrigin>?</hor:SireCountryOfOrigin>
+                  <!--Optional:-->
+                  <hor:DamCountryOfOrigin>?</hor:DamCountryOfOrigin>
+                  <!--Optional:-->
+                  <hor:SireOfDamCountryOfOrigin>?</hor:SireOfDamCountryOfOrigin>
+                  <!--Optional:-->
+                  <hor:GrandSire lang="?">?</hor:GrandSire>
+                  <!--Optional:-->
+                  <hor:ProfileImageURL>?</hor:ProfileImageURL>
+                  <hor:LastUpdated>?</hor:LastUpdated>
+                  <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+                  <!--You may enter ANY elements at this point-->
+               </hor:HorseDetails>
+               <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+               <!--You may enter ANY elements at this point-->
+            </hor:Horse>
+            <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </hor:RacingProfile>
+         <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+         <!--You may enter ANY elements at this point-->
+      </hor:GetHorseByHorseIDResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetHorseByHorseIDResponse"/></con:response><con:response name="Response 2" id="545cdde2-f6aa-4393-b6e0-c9f37bc28cdd" httpResponseStatus="200" encoding="UTF-8" dataSource=""><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:hor="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">
+   <soap:Header/>
+   <soap:Body>
+      <hor:GetHorseByHorseIDResponse>
+         <hor:Return>
+            <com:Code>?</com:Code>
+            <!--Optional:-->
+            <com:Category>?</com:Category>
+            <!--Optional:-->
+            <com:Description>?</com:Description>
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </hor:Return>
+         <!--Optional:-->
+         <hor:RacingProfile>
+            <!--1 or more repetitions:-->
+            <hor:Horse horseID="2" horseBrandNo="?">
+               <hor:HorseInfo>
+                  <!--1 or more repetitions:-->
+                  <hor:Name lang="?">?</hor:Name>
+                  <hor:Status>?</hor:Status>
+                  <!--Optional:-->
+                  <hor:CountryOfOriginCode>?</hor:CountryOfOriginCode>
+                  <!--Optional:-->
+                  <hor:VisitingIndicator>?</hor:VisitingIndicator>
+                  <!--Optional:-->
+                  <hor:Colour>?</hor:Colour>
+                  <!--Optional:-->
+                  <hor:Sex>?</hor:Sex>
+                  <!--Optional:-->
+                  <hor:ImportType>?</hor:ImportType>
+                  <!--Zero or more repetitions:-->
+                  <hor:OwnerPublishedName lang="?" seqNo="?">?</hor:OwnerPublishedName>
+                  <!--Optional:-->
+                  <hor:CurrentRating ratingDate="?">?</hor:CurrentRating>
+                  <!--Optional:-->
+                  <hor:InitialRatingOfSeason>?</hor:InitialRatingOfSeason>
+                  <!--Optional:-->
+                  <hor:Sire lang="?">?</hor:Sire>
+                  <!--Optional:-->
+                  <hor:Dam lang="?">?</hor:Dam>
+                  <!--Optional:-->
+                  <hor:SireOfDam lang="?">?</hor:SireOfDam>
+                  <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+                  <!--You may enter ANY elements at this point-->
+               </hor:HorseInfo>
+               <hor:HorseDetails>
+                  <!--Optional:-->
+                  <hor:Age>?</hor:Age>
+                  <!--Optional:-->
+                  <hor:StatusDate>?</hor:StatusDate>
+                  <!--Optional:-->
+                  <hor:FoalingDate>?</hor:FoalingDate>
+                  <!--Optional:-->
+                  <hor:FoalingYear>?</hor:FoalingYear>
+                  <!--Optional:-->
+                  <hor:ImportDate>?</hor:ImportDate>
+                  <!--Optional:-->
+                  <hor:ImportYear>?</hor:ImportYear>
+                  <!--Optional:-->
+                  <hor:ExportedCountry>?</hor:ExportedCountry>
+                  <!--Optional:-->
+                  <hor:TrainerCode TrainerID="?">?</hor:TrainerCode>
+                  <!--Optional:-->
+                  <hor:TrainerDate>?</hor:TrainerDate>
+                  <!--Zero or more repetitions:-->
+                  <hor:FormerName lang="?">?</hor:FormerName>
+                  <!--Zero or more repetitions:-->
+                  <hor:RacingColourDesc lang="?" seqNo="?">?</hor:RacingColourDesc>
+                  <!--Optional:-->
+                  <hor:SireCountryOfOrigin>?</hor:SireCountryOfOrigin>
+                  <!--Optional:-->
+                  <hor:DamCountryOfOrigin>?</hor:DamCountryOfOrigin>
+                  <!--Optional:-->
+                  <hor:SireOfDamCountryOfOrigin>?</hor:SireOfDamCountryOfOrigin>
+                  <!--Optional:-->
+                  <hor:GrandSire lang="?">?</hor:GrandSire>
+                  <!--Optional:-->
+                  <hor:ProfileImageURL>?</hor:ProfileImageURL>
+                  <hor:LastUpdated>?</hor:LastUpdated>
+                  <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+                  <!--You may enter ANY elements at this point-->
+               </hor:HorseDetails>
+               <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+               <!--You may enter ANY elements at this point-->
+            </hor:Horse>
+            <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </hor:RacingProfile>
+         <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+         <!--You may enter ANY elements at this point-->
+      </hor:GetHorseByHorseIDResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetHorseByHorseIDResponse"/></con:response><con:response name="error" id="d481be0b-4823-4a3d-ae8f-7e3d2c099250" httpResponseStatus="500" encoding="UTF-8" dataSource=""><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+  <soap:Body>
+    <soap:Fault>
+      <soap:Code>
+        <soap:Value>400</soap:Value>
+        <!--Optional:-->
+        <soap:Subcode>
+          <soap:Value>?</soap:Value>
+          <!--Optional:-->
+          <soap:Subcode/>
+        </soap:Subcode>
+      </soap:Code>
+      <soap:Reason>
+        <!--1 or more repetitions:-->
+        <soap:Text xml:lang="?">?</soap:Text>
+      </soap:Reason>
+      <!--Optional:-->
+      <soap:Node>?</soap:Node>
+      <!--Optional:-->
+      <soap:Role>?</soap:Role>
+      <!--Optional:-->
+      <soap:Detail>
+        <!--You may enter ANY elements at this point-->
+      </soap:Detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetHorseByHorseIDResponse"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:query><con:name>select horse id</con:name><con:query>declare namespace hor='http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1';
+//hor:GetHorseByHorseIDRequest/hor:HorseID[1]</con:query><con:match>2</con:match><con:response>Response 2</con:response></con:query><con:query><con:name>no horse</con:name><con:query>declare namespace hor='http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1';
+//hor:GetHorseByHorseIDRequest/hor:HorseID[1]</con:query><con:match>3</con:match><con:response>error</con:response></con:query></con:dispatchConfig></con:mockOperation>

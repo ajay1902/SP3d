@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="GetServiceInfo" id="80e5170a-4e1d-4c04-ab7b-e97715d79839" interface="HorseProfileJMSBinding" operation="GetServiceInfo" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="80e5170a-4e1d-4c04-ab7b-e97715d79839fileName">GetServiceInfo</con:setting></con:settings><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="33a34250-870a-452f-9091-ee63554f6da0" httpResponseStatus="200" encoding="UTF-8" dataSource=""><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">
+   <soap:Header/>
+   <soap:Body>
+      <com:GetServiceInfoResponse>
+         <com:Return>
+            <com:Code>?</com:Code>
+            <!--Optional:-->
+            <com:Category>?</com:Category>
+            <!--Optional:-->
+            <com:Description>?</com:Description>
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </com:Return>
+         <!--Optional:-->
+         <com:ServiceInfo>
+            <com:ServiceStatus>?</com:ServiceStatus>
+            <com:ReleaseDate>?</com:ReleaseDate>
+            <com:ReleaseMajorVersion>?</com:ReleaseMajorVersion>
+            <com:ReleaseMinorVersion>?</com:ReleaseMinorVersion>
+            <com:ServiceName>?</com:ServiceName>
+            <!--Optional:-->
+            <com:Reserved>
+               <!--Optional:-->
+               <com:AvailableServiceCalls>?</com:AvailableServiceCalls>
+               <!--Optional:-->
+               <com:ServiceThreads>?</com:ServiceThreads>
+               <!--Optional:-->
+               <com:FileDescriptors>?</com:FileDescriptors>
+               <!--Optional:-->
+               <com:MemoryUsage>?</com:MemoryUsage>
+               <!--Optional:-->
+               <com:NICs>?</com:NICs>
+               <!--Zero or more repetitions:-->
+               <com:Value key="?">?</com:Value>
+               <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+               <!--You may enter ANY elements at this point-->
+            </com:Reserved>
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </com:ServiceInfo>
+         <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+         <!--You may enter ANY elements at this point-->
+      </com:GetServiceInfoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetServiceInfoResponse"/></con:response><con:dispatchConfig/></con:mockOperation>

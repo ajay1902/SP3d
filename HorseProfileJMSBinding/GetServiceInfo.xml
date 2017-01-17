@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="37cd968e-0385-4743-bc34-643cd9c0c391" isOneWay="false" action="/service/CAP/IDARS/HorseProfile/GetServiceInfo" name="GetServiceInfo" bindingOperationName="GetServiceInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="37cd968e-0385-4743-bc34-643cd9c0c391fileName">GetServiceInfo</con:setting></con:settings><con:call id="87b96fe0-9834-4f23-9256-7235f8d9c2f9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ajay-PC:8054/mockHorseProfileJMSBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <com:GetServiceInfoRequest/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetServiceInfoRequest"/></con:call></con:operation>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="99c7fe2a-45c6-4140-85cf-4ed46e282aea" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="99c7fe2a-45c6-4140-85cf-4ed46e282aeafileName">TestCase-1</con:setting></con:settings><con:testStep type="request" id="bb8e61cd-243f-47a6-8e60-a846a65e6777" name="GetHorseByHorseID - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HorseProfileJMSBinding</con:interface><con:operation>GetHorseByHorseID</con:operation><con:request name="GetHorseByHorseID - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7d3e4762-5ddf-4ddf-8692-fe91c5d61ad9"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ajay-PC:8054/mockHorseProfileJMSBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:hor="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <hor:GetHorseByHorseIDRequest>\r
+         <hor:ConsumerHeader>\r
+            <!--Optional:-->\r
+            <com:SessionID>?</com:SessionID>\r
+            <com:ServerID>?</com:ServerID>\r
+            <!--Optional:-->\r
+            <com:ClientIP>?</com:ClientIP>\r
+            <com:EntryPointCode>?</com:EntryPointCode>\r
+            <!--Optional:-->\r
+            <com:ServiceVersion>?</com:ServiceVersion>\r
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>\r
+            <!--You may enter ANY elements at this point-->\r
+         </hor:ConsumerHeader>\r
+         <!--You have a CHOICE of the next 2 items at this level-->\r
+         <hor:HorseID>3</hor:HorseID>\r
+         <hor:HorseBrandNo>?</hor:HorseBrandNo>\r
+      </hor:GetHorseByHorseIDRequest>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6d617c4d-96bb-47fe-b803-6b94a79f1389" name="SOAP Response"/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetHorseByHorseIDRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

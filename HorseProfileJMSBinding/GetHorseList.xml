@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="39b2bd5c-ad97-494b-92b7-b42b61750393" isOneWay="false" action="/service/CAP/IDARS/HorseProfile/GetHorseList" name="GetHorseList" bindingOperationName="GetHorseList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="39b2bd5c-ad97-494b-92b7-b42b61750393fileName">GetHorseList</con:setting></con:settings><con:call id="17a9f981-f3db-4563-bea5-c876da9b06ca" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ajay-PC:8054/mockHorseProfileJMSBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:hor="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <hor:GetHorseListRequest>\r
+         <hor:ConsumerHeader>\r
+            <!--Optional:-->\r
+            <com:SessionID>?</com:SessionID>\r
+            <com:ServerID>?</com:ServerID>\r
+            <!--Optional:-->\r
+            <com:ClientIP>?</com:ClientIP>\r
+            <com:EntryPointCode>?</com:EntryPointCode>\r
+            <!--Optional:-->\r
+            <com:ServiceVersion>?</com:ServiceVersion>\r
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>\r
+            <!--You may enter ANY elements at this point-->\r
+         </hor:ConsumerHeader>\r
+         <hor:ActiveStatus>1</hor:ActiveStatus>\r
+      </hor:GetHorseListRequest>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetHorseListRequest"/></con:call></con:operation>

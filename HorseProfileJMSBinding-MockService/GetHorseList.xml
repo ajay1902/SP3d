@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="GetHorseList" id="4ed05d36-04cb-4d59-81a8-fd5fab4d04c4" interface="HorseProfileJMSBinding" operation="GetHorseList" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4ed05d36-04cb-4d59-81a8-fd5fab4d04c4fileName">GetHorseList</con:setting></con:settings><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="abe8337a-cb19-45d2-88d8-15dcb4de93f3" httpResponseStatus="200" encoding="UTF-8" dataSource=""><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:hor="http://www.hkjc.org.hk/Schema/CAP/IDARS/HorseProfile_v1" xmlns:com="http://www.hkjc.org.hk/Schema/CAP/Common_v2">
+   <soap:Header/>
+   <soap:Body>
+      <hor:GetHorseListResponse>
+         <hor:Return>
+            <com:Code>?</com:Code>
+            <!--Optional:-->
+            <com:Category>?</com:Category>
+            <!--Optional:-->
+            <com:Description>?</com:Description>
+            <com:EndOf_v2_0Elm>?</com:EndOf_v2_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </hor:Return>
+         <!--Optional:-->
+         <hor:RacingProfile>
+            <!--1 or more repetitions:-->
+            <hor:Horse horseID="?" horseBrandNo="?">
+               <!--1 or more repetitions:-->
+               <hor:Name lang="?">?</hor:Name>
+               <hor:Status>?</hor:Status>
+               <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+               <!--You may enter ANY elements at this point-->
+            </hor:Horse>
+            <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+            <!--You may enter ANY elements at this point-->
+         </hor:RacingProfile>
+         <hor:EndOf_v1_0Elm>?</hor:EndOf_v1_0Elm>
+         <!--You may enter ANY elements at this point-->
+      </hor:GetHorseListResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.hkjc.org.hk/WSDL/CAP/IDARS/HorseProfile_v1/HorseProfile/GetHorseListResponse"/></con:response><con:dispatchConfig/></con:mockOperation>
